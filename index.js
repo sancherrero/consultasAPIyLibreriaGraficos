@@ -21,7 +21,7 @@ const getData = async function () {
 };
 
 const setTarjetas = () => {
-  if (firstTime != false) {
+  if (firstTime) {
     jobsName.forEach((element) => {
       mostrarJobs(element);
     });
@@ -39,6 +39,7 @@ const desplazar = () => {
   });
 }
 const setGraphic = async function () {
+if(!firstTime){
   const chart = new Chart(ctx, {
     type: "doughnut",
     data: {
@@ -74,6 +75,9 @@ const setGraphic = async function () {
     top: 1500,
     behavior: "smooth",
   });
+}else{
+    return
+}
 };
 
 
